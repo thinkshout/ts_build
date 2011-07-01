@@ -4,6 +4,6 @@
  * Implements hook_install().
  */
 function ts_build_install() {
-  theme_enable(array('rubik'));
-  variable_set('theme_default', 'rubik');
+  theme_enable(array('seven'));
+  variable_set('admin_theme', 'seven');
 }

@@ -1,9 +1,8 @@
-name = Build Kit
+name = TS Build
 core = 7.x
-description = Get started fast on a site build.
+description = ThinkShout base install profile.
 
 ; Core
-dependencies[] = book
 dependencies[] = contact
 dependencies[] = dblog
 dependencies[] = field_ui
@@ -13,15 +12,18 @@ dependencies[] = path
 dependencies[] = taxonomy
 
 ; Contrib
-dependencies[] = admin
-dependencies[] = openid
-dependencies[] = openidadmin
+dependencies[] = admin_menu
 dependencies[] = context
 dependencies[] = context_ui
 dependencies[] = ctools
 dependencies[] = devel
 dependencies[] = diff
 dependencies[] = features
+dependencies[] = imce
+dependencies[] = imce_wysiwyg
+dependencies[] = pathauto
 dependencies[] = strongarm
+dependencies[] = token
 dependencies[] = views
 dependencies[] = views_ui
+dependencies[] = wysiwyg
