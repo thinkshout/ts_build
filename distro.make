@@ -18,5 +18,5 @@ projects[] = drupal
 
 projects[ts_build][type] = profile
 projects[ts_build][download][type] = git
-projects[ts_build][download][url] = http://git.drupal.org/project/buildkit.git
-projects[ts_build][download][tag] = 7.x-2.0-beta2
+projects[ts_build][download][url] = https://github.com/thinkshout/ts_build.git
+projects[ts_build][download][revision] = "master"
