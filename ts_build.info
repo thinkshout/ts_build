@@ -27,3 +27,17 @@ dependencies[] = token
 dependencies[] = views
 dependencies[] = views_ui
 dependencies[] = wysiwyg
+
+; theme
+theme = layoutstudio
+
+; variables
+variables[admin_theme] = seven
+
+; nodes
+nodes[about][type] = page
+nodes[about][title] = About
+nodes[about][body] = Lorem ipsum dolor sit amet...
+nodes[about][uid] = 1
+nodes[about][menu][link_title] = About
+nodes[about][menu][menu_name] = main-menu
