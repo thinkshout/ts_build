@@ -9,6 +9,7 @@ dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = menu
 dependencies[] = path
+dependencies[] = rdf
 dependencies[] = taxonomy
 
 ; Contrib
@@ -33,6 +34,7 @@ theme = layoutstudio
 
 ; variables
 variables[admin_theme] = seven
+variables[site_name] = ThinkShout Base Profile
 
 ; nodes
 nodes[about][type] = page
@@ -40,4 +42,4 @@ nodes[about][title] = About
 nodes[about][body] = Lorem ipsum dolor sit amet...
 nodes[about][uid] = 1
 nodes[about][menu][link_title] = About
-nodes[about][menu][menu_name] = main-menu
+nodes[about][menu][menu_name] = main-links
