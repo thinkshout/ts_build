@@ -67,9 +67,6 @@ libraries[ckeditor][type] = "library"
 libraries[ckeditor][download][type] = "file"
 libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.5.3/ckeditor_3.5.3.tar.gz"
 
-libraries[profiler][download][type] = "get"
-libraries[profiler][download][url] = "http://ftp.drupal.org/files/projects/profiler-7.x-2.x-dev.tar.gz"
-
 ; === Developer Tools - To be removed for production builds ===
 
 projects[devel][subdir] = "development"
