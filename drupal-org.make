@@ -3,6 +3,10 @@
 api = 2
 core = 7.x
 
+contrib-destination = sites/all
+contrib_destination = sites/all
+base_contrib_destination = sites/all
+
 ; Contrib Modules
 
 projects[admin_menu][subdir] = "contrib"
