@@ -3,6 +3,7 @@ core = 7.x
 description = ThinkShout base install profile.
 
 ; Core
+dependencies[] = block
 dependencies[] = contact
 dependencies[] = dblog
 dependencies[] = field_ui
