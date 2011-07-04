@@ -17,11 +17,11 @@ make use of TS Build:
 
 Grab the `distro.make` file from TS Build and run:
 
-    $ drush make --contrib-destination=sites/all/ ts_build.make [directory]
+    $ drush make --contrib-destination=sites/all/ distro.make [directory]
 
 or use its url on GitHub directly:
 
-    $ drush make --contrib-destination=sites/all/  "https://raw.github.com/thinkshout/ts_build/master/ts_build.make" [directory]
+    $ drush make --contrib-destination=sites/all/  "https://raw.github.com/thinkshout/ts_build/master/distro.make" [directory]
 
 Notes:
 
@@ -52,7 +52,7 @@ extends TS Build:
   Build Kit distro makefile and then add your new install profile to it:
 
         ; Include Build Kit distro makefile via URL
-        includes[] = https://raw.github.com/thinkshout/ts_build/master/ts_build.make
+        includes[] = https://raw.github.com/thinkshout/ts_build/master/distro.make
 
         ; Add myprofile to the full Drupal distro build
         projects[myprofile][type] = profile
