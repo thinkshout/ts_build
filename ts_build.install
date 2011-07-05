@@ -104,8 +104,8 @@ function ts_build_install() {
   
   // Enable default permissions for system roles.
   $filtered_html_permission = filter_permission_name($filtered_html_format);
-  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content', 'access comments', $filtered_html_permission));
-  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content', 'access comments', 'post comments', 'skip comment approval', $filtered_html_permission));
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content', $filtered_html_permission));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content', $filtered_html_permission));
 
   // Create a default role for site administrators, with all available permissions assigned.
   $admin_role = new stdClass();
@@ -139,5 +139,62 @@ function ts_build_install() {
     ->condition('name', 'seven')
     ->execute();
   variable_set('admin_theme', 'seven');
-  variable_set('node_admin_theme', '1');  
+  variable_set('node_admin_theme', '1');
+  
+  // save wysiwyg settings
+  ts_build_wysiswyg_settings();
+}
+
+/**
+ * Save default wysiwyg settings for full_html format
+ */
+function ts_build_wysiswyg_settings() {
+  $settings = array (
+    'default' => 1,
+    'user_choose' => 0,
+    'show_toggle' => 1,
+    'theme' => 'advanced',
+    'language' => 'en',
+    'buttons' => array (
+      'default' => array (
+        'Bold' => 1,
+        'Italic' => 1,
+        'BulletedList' => 1,
+        'NumberedList' => 1,
+        'Outdent' => 1,
+        'Indent' => 1,
+        'Link' => 1,
+        'Unlink' => 1,
+        'Anchor' => 1,
+        'Image' => 1,
+        'Blockquote' => 1,
+        'RemoveFormat' => 1,
+        'Format' => 1,
+        'Table' => 1,
+      ),
+      'imce' => array (
+        'imce' => 1,
+      ),
+      'drupal' => array (
+        'break' => 1,
+      ),
+    ),
+    'toolbar_loc' => 'top',
+    'toolbar_align' => 'left',
+    'path_loc' => 'bottom',
+    'resizing' => 1,
+    'verify_html' => 1,
+    'preformatted' => 0,
+    'convert_fonts_to_spans' => 1,
+    'remove_linebreaks' => 0,
+    'apply_source_formatting' => 0,
+    'paste_auto_cleanup_on_paste' => 0,
+    'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
+    'css_setting' => 'none',
+    'css_path' => '',
+    'css_classes' => '',
+  );
+  
+  db_query("INSERT INTO {wysiwyg} (format, editor, settings) VALUES ('full_html', 'ckeditor', :settings)", 
+    array(':settings' => serialize($settings)));
 }
