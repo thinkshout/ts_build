@@ -9,7 +9,7 @@ set -e
 # profile will not be run, just built.
 #
 
-PROJECT=firstave2013_distro
+source scripts/config.sh
 
 confirm () {
   read -r -p "${1:-Are you sure? [Y/n]} " response
