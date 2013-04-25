@@ -82,8 +82,8 @@ versioncheck () {
 }
 
 usage() {
-  echo "deploy.sh <HOST_TYPE> <SSH_ADDRESS_OF_REPO>" >&2
-  echo "<HOST_TYPE> can be acquia, pantheon, or generic" >&2
+  echo "deploy.sh <# of commits from made directly on host since last push>" >&2
+  echo "Be sure to put your configuration info into scripts/config.sh" >&2
   exit 1
 }
 
