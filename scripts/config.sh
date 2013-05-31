@@ -1,9 +1,11 @@
 #!/bin/bash
 
 # match your install profile name
-PROJECT=profilename
+PROJECT=asi
 
 # pantheon, acquia, generic
-HOSTTYPE=generic
+HOSTTYPE=pantheon
+
+SITENAME="Site Name"
 
 GITREPO=
