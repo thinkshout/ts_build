@@ -171,7 +171,7 @@ echo "Amalgamating the following commits from $BUILDREPO:" >> $TEMP_BUILD/commit
 echo "Amalgamating commit comments since: $COMMITDATE"
 git log --pretty=format:"%h %s" --since="$COMMITDATE" >> $TEMP_BUILD/commitmessage
 
-if ['x$EDITOR' == 'x']; then
+if [ "x$EDITOR" == "x" ]; then
   echo "Running vi to customize commit message: close editor to continue script."
   vi $TEMP_BUILD/commitmessage
 else
