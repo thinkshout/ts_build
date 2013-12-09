@@ -11,5 +11,5 @@ SITENAME="Site Name"
 GITREPO=
 
 #Adding DB name and password by default
-DB_Name =
-DB_Passowrd =
+DB_Name ="root"
+DB_Passowrd ="root"
