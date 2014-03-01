@@ -12,10 +12,14 @@ set -e
 #
 
 ORIGIN=$(pwd)
-SKIP=$1
+COMMITFROM=$1
+SKIP=$2
 source scripts/config.sh
 HOSTDRUPALROOT=$HOSTTYPE
 source scripts/hosttypes/$HOSTTYPE.sh
+
+
+
 
 confirmpush () {
   echo "Git add & commit completed. Ready to push to Repo at $GITREPO."
@@ -154,14 +158,19 @@ mv $TEMP_BUILD/.git $TEMP_BUILD/$HOSTTYPE/"
 # so we end up jumping around the directory structure to make git calls
 # First, get the last hosting repo commit date so we know where to start
 # our amalgamated commit comments from:
-cd $TEMP_BUILD/$HOSTTYPE
-COMMIT=`git rev-list --all --timestamp --max-count=1 --skip=$SKIP`
+if [ "x$COMMITFROM" == "x" ]; then
+  cd $TEMP_BUILD/$HOSTTYPE
+  COMMIT=`git rev-list --all --timestamp --max-count=1 --skip=$SKIP`
+  cd $ORIGIN
+else
+  cd $ORIGIN
+  COMMIT=`git rev-list $COMMITFROM --timestamp --max-count=1`
+fi
 FILTER=" *"
 COMMITDATEUNIX=${COMMIT%%$FILTER}
 COMMITDATE=`date -r $COMMITDATEUNIX '+%m/%d/%Y %H:%M:%S'`
 
 # Git log for commit message
-cd $ORIGIN
 URLINFO=`cat .git/config | grep url`
 BUILDREPO=${URLINFO##*@}
 
