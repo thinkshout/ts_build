@@ -22,7 +22,11 @@ function ts_build_custom_install(&$install_state) {
   include_once 'libraries/ts_install_helpers/ts_install_helpers.inc'; // Load helper functions.
   // Disable DB blocks so we can use context to place everything.
   if (module_exists('block')) {
-    //db_query("UPDATE {block} SET status = 0, region = ''");
+    db_update('block')
+      ->fields(array(
+        'status' => 0,
+        'region' => ''))
+      ->execute();
   }
   drupal_flush_all_caches();
   features_revert();
