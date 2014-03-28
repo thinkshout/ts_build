@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # match your install profile name
-PROJECT=asi
+PROJECT=ts_build
 
 # pantheon, acquia, generic
 HOSTTYPE=pantheon
