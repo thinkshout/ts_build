@@ -220,15 +220,15 @@ git ls-files -d --exclude-standard > $TEMP_BUILD/deletes
 echo "Adding file deletions to GIT"
 while read LINE
   do
-    echo "Deleted: $LINE";
-    git rm $LINE;
+    echo "Deleted: '$LINE'";
+    git rm "$LINE";
 done < $TEMP_BUILD/deletes
 
 git ls-files -mo --exclude-standard > $TEMP_BUILD/changes
 echo "Adding new and changed files to GIT"
 while read LINE
   do
-    echo "Adding $LINE";
+    echo "Adding '$LINE'";
     git add "$LINE";
 done < $TEMP_BUILD/changes
 git status
