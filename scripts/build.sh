@@ -124,7 +124,7 @@ mv $TEMP_BUILD $DESTINATION
 if [ $DBUSER  ] && [ $DBPASS ] && [ $DB ] ; then
   cd $DESTINATION
   echo "Running install profile"
-  drush si $PROJECT --site-name=$SITENAME --db-url=mysql://$DBUSER:$DBPASS@localhost/$DB -y
+  drush si $PROJECT --site-name="$SITENAME" --db-url=mysql://$DBUSER:$DBPASS@localhost/$DB -y
 else
   echo "Skipping install profile"
 fi
