@@ -8,7 +8,7 @@
 function ts_build_install_tasks(){
   $taskset = array(
     'ts_build_custom_install' => array(
-      'display_name' => st('Thinkshout Site Setup'),
+      'display_name' => t('Thinkshout Site Setup'),
     ),
   );
   return $taskset;
