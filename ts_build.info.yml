@@ -10,25 +10,25 @@ dependencies:
   - dblog
   - field_ui
   - file
-  - menu
-  - number
+# - menu
+# - number
   - options
   - path
   - rdf
   - taxonomy
-  - admin_menu
-  - bean
-  - context
-  - context_ui
-  - ctools
-  - devel
-  - diff
+# - admin_menu
+# - bean
+# - context
+# - context_ui
+# - ctools
+# - devel
+# - diff
   - entity
-  - entityreference
-  - features
-  - field_collection
-  - pathauto
-  - strongarm
-  - token
+# - entityreference
+# - features
+# - field_collection
+# - pathauto
+# - strongarm
+# - token
   - views
   - views_ui
