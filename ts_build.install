@@ -4,7 +4,7 @@
  * Implements hook_install().
  */
 function ts_build_install() {
-  include_once DRUPAL_ROOT . '/profiles/minimal/minimal.install';
+  include_once DRUPAL_ROOT . '/core/profiles/minimal/minimal.install';
    // Turn off Adv Help warning for Views.
   variable_set('views_ui_show_advanced_help_warning', '0');
 
