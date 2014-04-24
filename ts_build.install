@@ -5,23 +5,23 @@
  */
 function ts_build_install() {
   include_once DRUPAL_ROOT . '/core/profiles/minimal/minimal.install';
-   // Turn off Adv Help warning for Views.
-  variable_set('views_ui_show_advanced_help_warning', '0');
+  // Turn off Adv Help warning for Views.
+  // variable_set('views_ui_show_advanced_help_warning', '0');
 
   // Set the admin theme. (NOTE: We don't want to enable it.)
-  variable_set('admin_theme', 'seven');
-  variable_set('node_admin_theme', '1');
+  // variable_set('admin_theme', 'seven');
+  // variable_set('node_admin_theme', '1');
 
   // Set homepage
-  //  variable_set('site_frontpage', 'home');
+  // variable_set('site_frontpage', 'home');
 
   // Set the timezome @TODO - Figure out why the timezone in Features exports not being accepted.
-  variable_set('date_default_timezone', 'America/Los_Angeles');
+  // variable_set('date_default_timezone', 'America/Los_Angeles');
 
   // Set default date formatters.
-  variable_set('date_format_long', 'l, F j, Y - g:ia');
-  variable_set('date_format_medium', 'D, m/d/Y - g:ia');
-  variable_set('date_format_short', 'D n/j g:i a');
+  // variable_set('date_format_long', 'l, F j, Y - g:ia');
+  // variable_set('date_format_medium', 'D, m/d/Y - g:ia');
+  // variable_set('date_format_short', 'D n/j g:i a');
 
   minimal_install();
 }
