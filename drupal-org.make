@@ -42,6 +42,10 @@ projects[features][subdir] = "contrib"
 ;projects[field_collection][version] = ""
 projects[field_collection][subdir] = "contrib"
 
+; honeypot
+;projects[honeypot][version] = ""
+projects[honeypot][subdir] = "contrib"
+
 ; pathauto requires token
 ;projects[pathauto][version] = ""
 projects[pathauto][subdir] = "contrib"

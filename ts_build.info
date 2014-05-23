@@ -27,6 +27,7 @@ dependencies[] = entity
 dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = field_collection
+dependencies[] = honeypot
 dependencies[] = pathauto
 dependencies[] = strongarm
 dependencies[] = token
