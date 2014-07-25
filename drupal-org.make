@@ -38,10 +38,6 @@ projects[entityreference][subdir] = "contrib"
 ;projects[features][version] = ""
 projects[features][subdir] = "contrib"
 
-; field_collection
-;projects[field_collection][version] = ""
-projects[field_collection][subdir] = "contrib"
-
 ; pathauto requires token
 ;projects[pathauto][version] = ""
 projects[pathauto][subdir] = "contrib"

@@ -26,7 +26,6 @@ dependencies[] = diff
 dependencies[] = entity
 dependencies[] = entityreference
 dependencies[] = features
-dependencies[] = field_collection
 dependencies[] = pathauto
 dependencies[] = strongarm
 dependencies[] = token
