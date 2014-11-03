@@ -1,6 +1,8 @@
 #!/bin/bash
 
 protectfiles () {
-	git checkout sites/default/settings.php
+  if [ -f sites/default/settings.php ]; then
+	  git checkout sites/default/settings.php
+  fi
 }
 MULTIDEV=true
