@@ -134,6 +134,7 @@ echo "$HOSTTYPE Clone complete, calling build.sh -y $TEMP_BUILD/drupal..."
 scripts/build.sh -y $TEMP_BUILD/drupal
 # Remove the scripts folder for security purposes:
 rm -rf $TEMP_BUILD/drupal/profiles/$PROJECT/scripts
+rm -f $TEMP_BUILD/drupal/profiles/$PROJECT/.gitignore
 # due to issue 1875510 on d.o, we have to hack the profile if we are on drush 5.8:
 rm -rf $TEMP_BUILD/drupal/profiles/$PROJECT/.git
 rm -rf $TEMP_BUILD/drupal/profiles/$PROJECT/libraries/*/.git
