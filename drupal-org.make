@@ -74,10 +74,6 @@ projects[devel][subdir] = "developer"
 ;projects[diff][version] = ""
 projects[diff][subdir] = "developer"
 
-; ftools
-;projects[ftools][version] = ""
-projects[ftools][subdir] = "developer"
-
 ;-----------------------------------------
 ; Libraries
 ;-----------------------------------------
