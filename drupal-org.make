@@ -38,6 +38,10 @@ projects[entityreference][subdir] = "contrib"
 ;projects[features][version] = ""
 projects[features][subdir] = "contrib"
 
+; menu_block
+;projects[menu_block][version] = ""
+projects[menu_block][subdir] = "contrib"
+
 ; pathauto requires token
 ;projects[pathauto][version] = ""
 projects[pathauto][subdir] = "contrib"
