@@ -74,6 +74,10 @@ projects[devel][subdir] = "developer"
 ;projects[diff][version] = ""
 projects[diff][subdir] = "developer"
 
+; reroute_email
+;projects[reroute_email][version] = ""
+projects[reroute_email][subdir] = "developer"
+
 ;-----------------------------------------
 ; Libraries
 ;-----------------------------------------
