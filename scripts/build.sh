@@ -120,13 +120,39 @@ rm -rf tmp
 cp -r . $TEMP_BUILD/profiles/$PROJECT
 mv $TEMP_BUILD $DESTINATION
 
+
 # run the install profile
+SETTINGS="$DESTINATION/profiles/$PROJECT/scripts/settings/settings_additions.php"
 if [ $DBUSER  ] && [ $DBPASS ] && [ $DB ] ; then
+  # If bash receives an error status, it will halt execution. Setting +e to tell
+  # bash to continue even if error.
+  set +e
   cd $DESTINATION
   echo "Running install profile"
   drush si $PROJECT --site-name="$SITENAME" --db-url=mysql://$DBUSER:$DBPASS@localhost/$DB -y
+  # Copy settings_additions.php if found
+  echo $SETTINGS
+  if [ -f $SETTINGS ]; then
+    echo -n "Copying settings.php additions"
+    chmod 664 $DESTINATION/sites/default/settings.php
+    cat $SETTINGS >> $DESTINATION/sites/default/settings.php
+    chmod 444 $DESTINATION/sites/default/settings.php
+  fi
+  set -e
 else
   echo "Skipping install profile"
+  # Copy settings_additions.php if found
+  echo $SETTINGS
+  if [ -f $SETTINGS ]; then
+    echo -n "Copying settings.php additions to default.settings.php "
+    cat $SETTINGS >> $DESTINATION/sites/default/default.settings.php
+  fi
 fi
+
+SETTINGS_SITE="$DESTINATION/profiles/$PROJECT/scripts/settings/site.settings.php"
+chmod 775 $DESTINATION/sites/default
+cp $SETTINGS_SITE $DESTINATION/sites/default/site.settings.php
+chmod 555 $DESTINATION/sites/default
+echo "Copied site.settings.php into place."
 
 echo "Build script complete."
