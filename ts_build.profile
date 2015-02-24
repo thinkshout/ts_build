@@ -21,7 +21,7 @@ function ts_build_install_tasks() {
  */
 function ts_build_custom_install(&$install_state) {
   // Load helper functions.
-  include_once 'libraries/ts_install_helpers/ts_install_helpers.inc';
+  include_once 'libraries/ts_install_helpers/ts_install_helpers.php';
   // Disable DB blocks so we can use context to place everything.
   if (module_exists('block')) {
     db_update('block')
