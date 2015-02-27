@@ -42,6 +42,10 @@ projects[features][subdir] = "contrib"
 ;projects[menu_block][version] = ""
 projects[menu_block][subdir] = "contrib"
 
+; imagestyleflush
+;projects[imagestyleflush][version] = ""
+projects[imagestyleflush][subdir] = "contrib"
+
 ; pathauto requires token
 ;projects[pathauto][version] = ""
 projects[pathauto][subdir] = "contrib"
