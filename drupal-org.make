@@ -9,6 +9,10 @@ core = 7.x
 ; Contrib Modules
 ;-----------------------------------------
 
+; admin_views
+; projects[admin_views][version] = ""
+projects[admin_views][subdir] = "contrib"
+
 ; bean requires ctools, entity
 ;projects[bean][version] = ""
 projects[bean][subdir] = "contrib"
