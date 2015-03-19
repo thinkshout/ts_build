@@ -9,11 +9,6 @@ core = 7.x
 ; Contrib Modules
 ;-----------------------------------------
 
-
-; admin_menu requires bean
-;projects[admin_menu][version] = ""
-projects[admin_menu][subdir] = "contrib"
-
 ; bean requires ctools, entity
 ;projects[bean][version] = ""
 projects[bean][subdir] = "contrib"
@@ -62,10 +57,6 @@ projects[views][subdir] = "contrib"
 ; Patched Contrib Modules
 ;-----------------------------------------
 
-; Patch to fix notices for render arrays in blocks/panels: http://drupal.org/node/1925018#comment-7361230
-;projects[ctools][patch][] = "http://drupal.org/files/ctools-1925018-61.patch"
-
-
 ;-----------------------------------------
 ; Developer tools
 ;-----------------------------------------
@@ -85,13 +76,6 @@ projects[reroute_email][subdir] = "developer"
 ;-----------------------------------------
 ; Libraries
 ;-----------------------------------------
-
-; ts_install_helpers
-libraries[ts_install_helpers][download][type] = git
-libraries[ts_install_helpers][download][url] = git@github.com:thinkshout/ts_install_helpers.git
-libraries[ts_install_helpers][directory_name] = "ts_install_helpers"
-libraries[ts_install_helpers][type] = "library"
-
 
 ; chosen
 libraries[chosen][download][type] = git
