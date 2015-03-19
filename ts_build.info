@@ -16,7 +16,6 @@ dependencies[] = rdf
 dependencies[] = taxonomy
 
 ; Contrib
-dependencies[] = admin_menu
 dependencies[] = bean
 dependencies[] = context
 dependencies[] = context_ui
@@ -26,6 +25,8 @@ dependencies[] = diff
 dependencies[] = entity
 dependencies[] = entityreference
 dependencies[] = features
+dependencies[] = navbar
+dependencies[] = navbar_flush_cache
 dependencies[] = pathauto
 dependencies[] = strongarm
 dependencies[] = token
