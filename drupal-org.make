@@ -37,6 +37,9 @@ projects[entityreference][subdir] = "contrib"
 ;projects[features][version] = ""
 projects[features][subdir] = "contrib"
 
+; libraries
+projects[libraries][subdir] = "contrib"
+
 ; menu_block
 ;projects[menu_block][version] = ""
 projects[menu_block][subdir] = "contrib"
@@ -44,7 +47,7 @@ projects[menu_block][subdir] = "contrib"
 ; module_filter
 projects[module_filter][subdir] = "contrib"
 
-; navbar
+; navbar requires libraries
 projects[navbar][subdir] = "contrib"
 
 ; navbar_flush_cache
