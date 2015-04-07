@@ -29,6 +29,10 @@ projects[ctools][subdir] = "contrib"
 ;projects[entity][version] = ""
 projects[entity][subdir] = "contrib"
 
+; entitycache
+;projects[entitycache][version] = ""
+projects[entitycache][subdir] = "contrib"
+
 ; entityreference
 ;projects[entityreference][version] = ""
 projects[entityreference][subdir] = "contrib"
@@ -36,6 +40,10 @@ projects[entityreference][subdir] = "contrib"
 ; features
 ;projects[features][version] = ""
 projects[features][subdir] = "contrib"
+
+; google_analytics
+;projects[google_analytics][version] = ""
+projects[google_analytics][subdir] = "contrib"
 
 ; libraries
 projects[libraries][subdir] = "contrib"
@@ -57,6 +65,10 @@ projects[navbar_flush_cache][subdir] = "contrib"
 ;projects[pathauto][version] = ""
 projects[pathauto][subdir] = "contrib"
 
+; redis requires token
+;projects[redis][version] = ""
+projects[redis][subdir] = "contrib"
+
 ; strongarm requires ctools
 ;projects[strongarm][version] = ""
 projects[strongarm][subdir] = "contrib"
@@ -68,6 +80,7 @@ projects[token][subdir] = "contrib"
 ; views
 ;projects[views][version] = ""
 projects[views][subdir] = "contrib"
+
 
 ;-----------------------------------------
 ; Patched Contrib Modules
@@ -89,12 +102,16 @@ projects[diff][subdir] = "developer"
 ;projects[reroute_email][version] = ""
 projects[reroute_email][subdir] = "developer"
 
+; migrate
+;projects[migrate][version] = ""
+projects[migrate][subdir] = "developer"
+
 ; ts_content
 projects[ts_content][download][type] = git
 projects[ts_content][type] = "module"
 projects[ts_content][download][url] = git@github.com:thinkshout/ts_content.git
 projects[ts_content][subdir] = "developer"
-projects[ts_content][revision] = "1b41485"
+;projects[ts_content][revision] = "1b41485"
 
 ;-----------------------------------------
 ; Libraries
