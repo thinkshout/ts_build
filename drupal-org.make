@@ -45,6 +45,10 @@ projects[features][subdir] = "contrib"
 ;projects[google_analytics][version] = ""
 projects[google_analytics][subdir] = "contrib"
 
+; honeypot
+projects[honeypot][version] = ""
+projects[honeypot][subdir] = "contrib"
+
 ; libraries
 projects[libraries][subdir] = "contrib"
 
