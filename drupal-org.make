@@ -54,6 +54,7 @@ projects[google_analytics][subdir] = "contrib"
 projects[honeypot][subdir] = "contrib"
 
 ; libraries
+;projects[libraries][version] = ""
 projects[libraries][subdir] = "contrib"
 
 ; menu_block
@@ -61,12 +62,15 @@ projects[libraries][subdir] = "contrib"
 projects[menu_block][subdir] = "contrib"
 
 ; module_filter
+;projects[module_filter][version] = ""
 projects[module_filter][subdir] = "contrib"
 
 ; navbar requires libraries
+;projects[navbar][version] = ""
 projects[navbar][subdir] = "contrib"
 
 ; navbar_flush_cache
+;projects[navbar_flush_cache][version] = ""
 projects[navbar_flush_cache][subdir] = "contrib"
 
 ; pathauto requires token
