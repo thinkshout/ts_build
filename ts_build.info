@@ -35,4 +35,7 @@ dependencies[] = token
 dependencies[] = views
 dependencies[] = views_ui
 
+; Devel
+dependencies[] = coffee
+
 files[] = ts_build.profile

@@ -102,6 +102,10 @@ projects[views][subdir] = "contrib"
 ; Developer tools
 ;-----------------------------------------
 
+; coffee
+;projects[coffee][version] = ""
+projects[coffee][subdir] = "developer"
+
 ; devel
 ;projects[devel][version] = ""
 projects[devel][subdir] = "developer"
