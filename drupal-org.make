@@ -50,7 +50,6 @@ projects[features][subdir] = "contrib"
 projects[google_analytics][subdir] = "contrib"
 
 ; honeypot
-projects[honeypot][version] = ""
 ;projects[honeypot][version] = ""
 projects[honeypot][subdir] = "contrib"
 

@@ -16,6 +16,7 @@ dependencies[] = rdf
 dependencies[] = taxonomy
 
 ; Contrib
+dependencies[] = admin_menu
 dependencies[] = bean
 dependencies[] = context
 dependencies[] = context_ui
