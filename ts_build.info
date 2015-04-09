@@ -22,6 +22,7 @@ dependencies[] = context_ui
 dependencies[] = ctools
 dependencies[] = devel
 dependencies[] = diff
+dependencies[] = email_registration
 dependencies[] = entity
 dependencies[] = entityreference
 dependencies[] = features

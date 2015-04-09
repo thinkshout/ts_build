@@ -25,6 +25,10 @@ projects[context][subdir] = "contrib"
 ;projects[ctools][version] = ""
 projects[ctools][subdir] = "contrib"
 
+; email_registration
+;projects[email_registration][version] = ""
+projects[email_registration][subdir] = "contrib"
+
 ; entity
 ;projects[entity][version] = ""
 projects[entity][subdir] = "contrib"
