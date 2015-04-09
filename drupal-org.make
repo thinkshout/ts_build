@@ -77,6 +77,10 @@ projects[redis][subdir] = "contrib"
 ;projects[strongarm][version] = ""
 projects[strongarm][subdir] = "contrib"
 
+; title
+;projects[title][version] = ""
+projects[title][subdir] = "contrib"
+
 ; token
 ;projects[token][version] = ""
 projects[token][subdir] = "contrib"
