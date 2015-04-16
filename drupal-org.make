@@ -89,6 +89,10 @@ projects[pathauto][subdir] = "contrib"
 ;projects[redis][version] = ""
 projects[redis][subdir] = "contrib"
 
+; redirect
+;projects[redirect][version] = ""
+projects[redirect][subdir] = "contrib"
+
 ; strongarm requires ctools
 ;projects[strongarm][version] = ""
 projects[strongarm][subdir] = "contrib"

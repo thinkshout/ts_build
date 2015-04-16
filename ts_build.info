@@ -38,6 +38,7 @@ dependencies[] = navbar
 dependencies[] = navbar_flush_cache
 dependencies[] = pathauto
 dependencies[] = redis
+dependencies[] = redirect
 dependencies[] = strongarm
 dependencies[] = smart_trim
 dependencies[] = title
