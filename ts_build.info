@@ -47,6 +47,7 @@ dependencies[] = title
 dependencies[] = token
 dependencies[] = views
 dependencies[] = views_ui
+dependencies[] = xmlsitemap
 
 ; Devel
 dependencies[] = coffee

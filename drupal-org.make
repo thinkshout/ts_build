@@ -121,6 +121,10 @@ projects[token][subdir] = "contrib"
 ;projects[views][version] = ""
 projects[views][subdir] = "contrib"
 
+; xmlsitemap
+;projects[xmlsitemap][version] = ""
+projects[xmlsitemap][subdir] = "contrib"
+
 
 ;-----------------------------------------
 ; Patched Contrib Modules
