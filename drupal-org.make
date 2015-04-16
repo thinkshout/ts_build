@@ -61,6 +61,10 @@ projects[libraries][subdir] = "contrib"
 projects[link][version] = ""
 projects[link][subdir] = contrib
 
+; linkit
+projects[linkit][version] = ""
+projects[linkit][subdir] = contrib
+
 ; menu_block
 ;projects[menu_block][version] = ""
 projects[menu_block][subdir] = "contrib"
