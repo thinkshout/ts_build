@@ -45,6 +45,10 @@ projects[entityreference][subdir] = "contrib"
 ;projects[features][version] = ""
 projects[features][subdir] = "contrib"
 
+; globalredirect
+;projects[globalredirect][version] = ""
+projects[globalredirect][subdir] = "contrib"
+
 ; google_analytics
 ;projects[google_analytics][version] = ""
 projects[google_analytics][subdir] = "contrib"
