@@ -17,14 +17,14 @@ dependencies[] = taxonomy
 
 ; Contrib
 dependencies[] = admin_menu
+dependencies[] = admin_views
 dependencies[] = bean
 dependencies[] = context
 dependencies[] = context_ui
 dependencies[] = ctools
-dependencies[] = devel
-dependencies[] = diff
 dependencies[] = email_registration
 dependencies[] = entity
+dependencies[] = entitycache
 dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = google_analytics
@@ -32,9 +32,11 @@ dependencies[] = honeypot
 dependencies[] = libraries
 dependencies[] = link
 dependencies[] = menu_block
+dependencies[] = module_filter
 dependencies[] = navbar
 dependencies[] = navbar_flush_cache
 dependencies[] = pathauto
+dependencies[] = redis
 dependencies[] = strongarm
 dependencies[] = smart_trim
 dependencies[] = title
@@ -44,5 +46,10 @@ dependencies[] = views_ui
 
 ; Devel
 dependencies[] = coffee
+dependencies[] = devel
+dependencies[] = diff
+dependencies[] = migrate
+dependencies[] = migrate_ui
+dependencies[] = reroute_email
 
 files[] = ts_build.profile

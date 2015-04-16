@@ -126,13 +126,13 @@ projects[devel][subdir] = "developer"
 ;projects[diff][version] = ""
 projects[diff][subdir] = "developer"
 
-; reroute_email
-;projects[reroute_email][version] = ""
-projects[reroute_email][subdir] = "developer"
-
 ; migrate
 ;projects[migrate][version] = ""
 projects[migrate][subdir] = "developer"
+
+; reroute_email
+;projects[reroute_email][version] = ""
+projects[reroute_email][subdir] = "developer"
 
 ; ts_content
 projects[ts_content][download][type] = git
