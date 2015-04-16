@@ -85,6 +85,10 @@ projects[redis][subdir] = "contrib"
 ;projects[strongarm][version] = ""
 projects[strongarm][subdir] = "contrib"
 
+; smart_trim
+projects[smart_trim][version] = ""
+projects[smart_trim][subdir] = contrib
+
 ; title
 ;projects[title][version] = ""
 projects[title][subdir] = "contrib"

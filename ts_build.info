@@ -32,6 +32,7 @@ dependencies[] = navbar
 dependencies[] = navbar_flush_cache
 dependencies[] = pathauto
 dependencies[] = strongarm
+dependencies[] = smart_trim
 dependencies[] = title
 dependencies[] = token
 dependencies[] = views
