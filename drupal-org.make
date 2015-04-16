@@ -57,6 +57,10 @@ projects[google_analytics][subdir] = "contrib"
 ;projects[honeypot][version] = ""
 projects[honeypot][subdir] = "contrib"
 
+; jquery_update
+;projects[jquery_update][version] = ""
+projects[jquery_update][subdir] = "contrib"
+
 ; libraries
 ;projects[libraries][version] = ""
 projects[libraries][subdir] = "contrib"

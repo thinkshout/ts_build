@@ -30,6 +30,7 @@ dependencies[] = features
 dependencies[] = globalredirect
 dependencies[] = google_analytics
 dependencies[] = honeypot
+dependencies[] = jquery_update
 dependencies[] = libraries
 dependencies[] = link
 dependencies[] = linkit
