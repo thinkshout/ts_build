@@ -73,6 +73,10 @@ projects[linkit][subdir] = contrib
 ;projects[menu_block][version] = ""
 projects[menu_block][subdir] = "contrib"
 
+; metatag
+;projects[metatag][version] = ""
+projects[metatag][subdir] = "contrib"
+
 ; module_filter
 ;projects[module_filter][version] = ""
 projects[module_filter][subdir] = "contrib"
