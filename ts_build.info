@@ -27,6 +27,7 @@ dependencies[] = email_registration
 dependencies[] = entity
 dependencies[] = entityreference
 dependencies[] = features
+dependencies[] = link
 dependencies[] = menu_block
 dependencies[] = navbar
 dependencies[] = navbar_flush_cache

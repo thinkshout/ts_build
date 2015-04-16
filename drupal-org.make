@@ -57,6 +57,10 @@ projects[honeypot][subdir] = "contrib"
 ;projects[libraries][version] = ""
 projects[libraries][subdir] = "contrib"
 
+; link
+projects[link][version] = ""
+projects[link][subdir] = contrib
+
 ; menu_block
 ;projects[menu_block][version] = ""
 projects[menu_block][subdir] = "contrib"
