@@ -26,6 +26,25 @@ function ts_build_custom_install(&$install_state) {
       ->fields(array('status' => 0, 'region' => ''))
       ->execute();
   }
+
+  // Disable the default Bartik theme
+  theme_disable(array('bartik'));
+
+  // Enable and set shiny theme for admin pages, and
+  // ts_build theme as default.
+  $enable = array(
+    'theme_default' => 'ts_build',
+    'admin_theme' => 'shiny',
+  );
+  theme_enable($enable);
+
+  foreach ($enable as $var => $theme) {
+    if (!is_numeric($var)) {
+      variable_set($var, $theme);
+    }
+  }
+
+  // Clean up.
   drupal_flush_all_caches();
   features_revert();
 }

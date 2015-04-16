@@ -5,6 +5,7 @@
 api = 2
 core = 7.x
 
+
 ;-----------------------------------------
 ; Contrib Modules
 ;-----------------------------------------
@@ -134,6 +135,7 @@ projects[xmlsitemap][subdir] = "contrib"
 ; Patched Contrib Modules
 ;-----------------------------------------
 
+
 ;-----------------------------------------
 ; Developer tools
 ;-----------------------------------------
@@ -165,6 +167,7 @@ projects[ts_content][download][url] = git@github.com:thinkshout/ts_content.git
 projects[ts_content][subdir] = "developer"
 ;projects[ts_content][revision] = "1b41485"
 
+
 ;-----------------------------------------
 ; Libraries
 ;-----------------------------------------
@@ -194,3 +197,12 @@ libraries[underscore][download][type] = get
 libraries[underscore][download][url] = https://github.com/jashkenas/underscore/archive/1.7.0.zip
 libraries[underscore][directory_name] = "underscore"
 libraries[underscore][type] = "library"
+
+
+;-----------------------------------------
+; Themes
+;-----------------------------------------
+projects[shiny][version] = ""
+projects[shiny][type] = theme
+projects[shiny][subdir] = contrib
+
