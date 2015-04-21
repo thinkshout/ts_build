@@ -63,7 +63,7 @@ confirmcommitmsg () {
 }
 
 librariescheck () {
-  git diff --name-status $TEMP_BUILD/$HOSTDRUPALROOT/profiles/$PROJECT/libraries >> $TEMP_BUILD/librariesdiff #--diff-filter=ACMRTUXB
+  git diff --name-status $TEMP_BUILD/drupal/profiles/$PROJECT/libraries >> $TEMP_BUILD/librariesdiff #--diff-filter=ACMRTUXB
   WORDCOUNT=`cat $TEMP_BUILD/librariesdiff | wc -l`
   if [ $WORDCOUNT -gt 0 ]; then
     echo $'\n'
@@ -166,22 +166,15 @@ fi
 
 # Remove the scripts folder for security purposes:
 rm -rf $TEMP_BUILD/drupal/profiles/$PROJECT/scripts
-rm -rf $TEMP_BUILD/drupal/profiles/$PROJECT/libraries/*/.git
-# Protect our remote .git, then blow away our remote Drupal root and replace it with our new one.
-# We have to do this because sometime the remote .git is in the Drupal root (Pantheon) and sometimes
-# it isn't (Acquia)
-mv $TEMP_BUILD/$HOSTTYPE/.git $TEMP_BUILD/
-rm -rf $TEMP_BUILD/$HOSTDRUPALROOT
-mv $TEMP_BUILD/drupal $TEMP_BUILD/$HOSTDRUPALROOT
-# Put our .git back where it belongs:
-rm -rf $TEMP_BUILD/$HOSTTYPE/.git
-mv $TEMP_BUILD/.git $TEMP_BUILD/$HOSTTYPE/
+echo "rm -rf $TEMP_BUILD/drupal/profiles/$PROJECT/scripts"
 
-echo "mv $TEMP_BUILD/$HOSTTYPE/.git $TEMP_BUILD/
-rm -rf $TEMP_BUILD/$HOSTDRUPALROOT
-mv $TEMP_BUILD/drupal $TEMP_BUILD/$HOSTDRUPALROOT
-rm -rf $TEMP_BUILD/$HOSTTYPE/.git
-mv $TEMP_BUILD/.git $TEMP_BUILD/$HOSTTYPE/"
+# Remove .git and .gitignore files
+find $TEMP_BUILD/drupal | grep \.git | xargs rm -rf
+echo "find $TEMP_BUILD/drupal | grep \.git | xargs rm -rf"
+
+# Move the remote .git into the drupal root
+mv $TEMP_BUILD/$HOSTTYPE/.git $TEMP_BUILD/drupal/.git
+echo "mv $TEMP_BUILD/$HOSTTYPE/.git $TEMP_BUILD/drupal/.git"
 
 # Now let's build our commit message.
 # git plumbing functions don't attend properly to --exec-path
@@ -189,8 +182,8 @@ mv $TEMP_BUILD/.git $TEMP_BUILD/$HOSTTYPE/"
 # First, get the last hosting repo commit date so we know where to start
 # our amalgamated commit comments from:
 if [[ -z $COMMITFROM ]]; then
-  cd $TEMP_BUILD/$HOSTTYPE
-  COMMIT=`git rev-list --all --timestamp --max-count=1 --skip=$SKIP`
+  cd $TEMP_BUILD/drupal
+  COMMIT=`git rev-list HEAD --timestamp --max-count=1 --skip=$SKIP`
   cd $ORIGIN
 else
   cd $ORIGIN
@@ -225,7 +218,7 @@ else
   $EDITOR $TEMP_BUILD/commitmessage
 fi
 
-cd $TEMP_BUILD/$HOSTTYPE
+cd $TEMP_BUILD/drupal
 
 if confirmcommitmsg; then
 echo "Commit message approved."
@@ -251,7 +244,7 @@ echo "Adding file deletions to GIT"
 while read LINE
   do
     echo "Deleted: $LINE";
-    git rm $LINE;
+    git rm "$LINE";
 done < $TEMP_BUILD/deletes
 
 git ls-files -mo --exclude-standard > $TEMP_BUILD/changes
@@ -271,7 +264,7 @@ if confirmpush; then
 else
   echo "Changes have not been pushed to Git Repository at $GITREPO."
   echo "To push changes:"
-  echo "> cd $TEMP_BUILD/$HOSTTYPE"
+  echo "> cd $TEMP_BUILD/drupal"
   echo "> git push"
 fi
 echo "Build script complete. Clean up temp files with:"
