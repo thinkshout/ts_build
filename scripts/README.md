@@ -35,6 +35,7 @@ Your hosttype script should always define a function called "protectfiles".
 Sometimes, the first deployment behaves differently than future deployments. For example, a new Pantheon site may not have a ```sites/default/settings.php``` file, which will break the "protectfiles" function. It is advisable to run a basic Drupal site install through the Pantheon UI, with Pantheon set to SSH mode, in order to initialize this file. Once that has been done, commit the file through Pantheon's UI and switch back to git mode.
 
 ### Deploying your changes
+
 Form your Build directory, pull your latest changes, then run:
 
 ```./scripts/deploy.sh```
