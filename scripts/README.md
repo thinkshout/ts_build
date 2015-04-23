@@ -47,7 +47,7 @@ The Deployment script accepts some special arguments:
 
 ```./scripts/deploy.sh # -b branchname```
 
-The # argument should be used if you have made some sort of commit directly on the host, like running the Pantheon updates. This number should match the number of host-based commits you have made since you last ran the deploy script. If you make host-based commits, then don't pass this argument in, the deploy script won't generate an accurate commit message for your changes, but will otherwise work fine.
+The # argument is an integer only, and should be used if you have made some sort of commit directly on the host, like running the Pantheon updates. This number should match the number of host-based commits you have made since you last ran the deploy script. If you make host-based commits, then don't pass this argument in, the deploy script won't generate an accurate commit message for your changes, but will otherwise work fine.
 
 The "branchname" argument, specified by a "-b", allows you to push to a remote branch on the host (for example, Pantheon's multidev environments). Note that the push is always done from whatever branch you are currently on, and this only specifies the remote branch to push to at the HOST.
 
