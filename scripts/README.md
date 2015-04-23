@@ -23,7 +23,8 @@ You will now have a second, somewhat messier copy of your git repo in your Drupa
 Update your config.sh, defining the ```HOSTTYPE``` and ```GITREPO``` variables. The ```HOSTTYPE``` should match one of the script names in the "hosttypes" directory (minus the file extension). The Gitrepo should point to your HOST'S git repository.
 
 In order to run the Deployment script, you need to define the environment variable ```$EDITOR```. Run ```echo $EDITOR```: if no value is returned, run the following command (you can add this to your .bashrc or .bash_profile to avoid repeating this step):
-export EDITOR='nano'
+
+```export EDITOR='nano'```
 
 (Replace 'nano' with your editor of choice. If you use Sublime you can use 'subl -w')
 
