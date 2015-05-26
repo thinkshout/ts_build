@@ -8,6 +8,7 @@ dependencies[] = contact
 dependencies[] = dblog
 dependencies[] = field_ui
 dependencies[] = file
+dependencies[] = list
 dependencies[] = menu
 dependencies[] = number
 dependencies[] = options
