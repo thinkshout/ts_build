@@ -150,9 +150,8 @@ else
 fi
 
 SETTINGS_SITE="$DESTINATION/profiles/$PROJECT/scripts/settings/site.settings.php"
-chmod 775 $DESTINATION/sites/default
+chmod 755 $DESTINATION/sites/default
 cp $SETTINGS_SITE $DESTINATION/sites/default/site.settings.php
-chmod 555 $DESTINATION/sites/default
 echo "Copied site.settings.php into place."
 
 echo "Build script complete."
