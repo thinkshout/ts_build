@@ -120,6 +120,8 @@ rm -rf tmp
 cp -r . $TEMP_BUILD/profiles/$PROJECT
 mv $TEMP_BUILD $DESTINATION
 
+# set permissions on the sites/default directory
+chmod 755 $DESTINATION/sites/default
 
 # run the install profile
 SETTINGS="$DESTINATION/profiles/$PROJECT/scripts/settings/settings_additions.php"
@@ -150,7 +152,6 @@ else
 fi
 
 SETTINGS_SITE="$DESTINATION/profiles/$PROJECT/scripts/settings/site.settings.php"
-chmod 755 $DESTINATION/sites/default
 cp $SETTINGS_SITE $DESTINATION/sites/default/site.settings.php
 echo "Copied site.settings.php into place."
 
