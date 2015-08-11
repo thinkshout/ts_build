@@ -23,7 +23,7 @@ dependencies:
 # - ctools
 # - devel
 # - diff
-  - entity
+# - entity
 # - entityreference
 # - features
 # - field_collection

@@ -3,7 +3,7 @@
 ;------------------------------------------------------------------------------
 
 api = 2
-core = 7.x
+core = 8.x
 
 ;-----------------------------------------
 ; Contrib Modules
@@ -28,7 +28,7 @@ core = 7.x
 
 ; entity
 ;projects[entity][version] = "1.5"
-projects[entity][subdir] = "contrib"
+;projects[entity][subdir] = "contrib"
 
 ; entityreference
 ;projects[entityreference][version] = "1.1"
@@ -80,7 +80,7 @@ projects[views][subdir] = "contrib"
 
 ; ftools
 ;projects[ftools][version] = "1.6"
-projects[ftools][subdir] = "developer"
+;projects[ftools][subdir] = "developer"
 
 ;-----------------------------------------
 ; Libraries
