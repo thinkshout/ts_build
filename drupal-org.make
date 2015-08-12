@@ -10,9 +10,9 @@ core = 8.x
 ;-----------------------------------------
 
 
-; admin_menu requires bean
+; admin_menu
 ;projects[admin_menu][version] = "3.0-rc4"
-;projects[admin_menu][subdir] = "contrib"
+projects[admin_menu][subdir] = "contrib"
 
 ; bean requires ctools, entity
 ;projects[bean][version] = "1.7"
@@ -36,7 +36,7 @@ core = 8.x
 
 ; features
 ;projects[features][version] = "2.0"
-;projects[features][subdir] = "contrib"
+projects[features][subdir] = "contrib"
 
 ; field_collection
 ;projects[field_collection][version] = "1.0-beta7"
@@ -44,7 +44,7 @@ core = 8.x
 
 ; pathauto requires token
 ;projects[pathauto][version] = "1.2"
-;projects[pathauto][subdir] = "contrib"
+projects[pathauto][subdir] = "contrib"
 
 ; strongarm requires ctools
 ;projects[strongarm][version] = "2.0"
@@ -52,7 +52,7 @@ core = 8.x
 
 ; token
 ;projects[token][version] = "1.5"
-;projects[token][subdir] = "contrib"
+projects[token][subdir] = "contrib"
 
 ; views
 ;projects[views][version] = "3.7"
@@ -99,3 +99,11 @@ libraries[chosen][download][url] = https://github.com/harvesthq/chosen.git
 libraries[chosen][directory_name] = "chosen"
 libraries[chosen][type] = "library"
 ;libraries[chosen][revision] = "333899ca51"
+
+
+;-----------------------------------------
+; Themes
+;-----------------------------------------
+projects[basic][version] = ""
+projects[basic][type] = theme
+projects[basic][subdir] = contrib

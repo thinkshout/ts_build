@@ -16,7 +16,7 @@ dependencies:
   - path
   - rdf
   - taxonomy
-# - admin_menu
+  - admin_menu
 # - bean
 # - context
 # - context_ui
@@ -25,10 +25,10 @@ dependencies:
 # - diff
 # - entity
 # - entityreference
-# - features
+  - features
 # - field_collection
-# - pathauto
+  - pathauto
 # - strongarm
-# - token
+  - token
   - views
   - views_ui
