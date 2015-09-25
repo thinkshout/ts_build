@@ -45,23 +45,6 @@ confirmpush () {
   esac
 }
 
-confirmcommitmsg () {
-  echo $'\n'
-  echo "Review commit message."
-  echo $'\n'
-  cat $TEMP_BUILD/commitmessage
-  echo $'\n'
-  read -r -p "Commit message is correct? [y/n] " response
-  case $response in
-    [yY][eE][sS]|[yY])
-      true
-      ;;
-    *)
-      false
-      ;;
-  esac
-}
-
 librariescheck () {
   git diff --name-status $TEMP_BUILD/drupal/profiles/$PROJECT/libraries >> $TEMP_BUILD/librariesdiff #--diff-filter=ACMRTUXB
   WORDCOUNT=`cat $TEMP_BUILD/librariesdiff | wc -l`
@@ -176,6 +159,37 @@ echo "find $TEMP_BUILD/drupal | grep \.git | xargs rm -rf"
 mv $TEMP_BUILD/$HOSTTYPE/.git $TEMP_BUILD/drupal/.git
 echo "mv $TEMP_BUILD/$HOSTTYPE/.git $TEMP_BUILD/drupal/.git"
 
+cd $TEMP_BUILD/drupal
+
+if librariescheck; then
+  echo $'\n'
+else
+  echo "Libraries updates not approved."
+  exit 1
+fi
+
+# Checkout files that we don't want removed from the host, like settings.php.
+# This function should be defined in the host include script.
+protectfiles;
+
+git ls-files -d --exclude-standard > $TEMP_BUILD/deletes
+echo "Adding file deletions to GIT"
+while read LINE
+  do
+    echo "Deleted: $LINE";
+    git rm "$LINE";
+done < $TEMP_BUILD/deletes
+
+git ls-files -mo --exclude-standard > $TEMP_BUILD/changes
+echo "Adding new and changed files to GIT"
+while read LINE
+  do
+    echo "Adding $LINE";
+    git add "$LINE";
+done < $TEMP_BUILD/changes
+
+git status
+
 # Now let's build our commit message.
 # git plumbing functions don't attend properly to --exec-path
 # so we end up jumping around the directory structure to make git calls
@@ -206,59 +220,20 @@ if [[ -z $COMMITTO ]]; then
   echo "Amalgamating commit comments since: $COMMITDATE"
   git log --pretty=format:"%h %s" --since="$COMMITDATE" >> $TEMP_BUILD/commitmessage
 else
-    echo "Amalgamating commit comments after-$COMMITDATE and before-$DEPLOYCOMMITDATEUNIX"
+  echo "Amalgamating commit comments after-$COMMITDATE and before-$DEPLOYCOMMITDATEUNIX"
   git log --pretty=format:"%h %s" --after="$COMMITDATE" --before="$COMMITTO" >> $TEMP_BUILD/commitmessage
-fi
-
-if [[ -z $EDITOR ]]; then
-  echo "Running vi to customize commit message: close editor to continue script."
-  vi $TEMP_BUILD/commitmessage
-else
-  echo "Running $EDITOR to customize commit message: close editor to continue script."
-  $EDITOR $TEMP_BUILD/commitmessage
 fi
 
 cd $TEMP_BUILD/drupal
 
-if confirmcommitmsg; then
-echo "Commit message approved."
-else
-echo "Commit message not approved."
-  exit 1
-fi
-
-if librariescheck; then
-  echo $'\n'
-else
-  echo "Libraries updates not approved."
-  exit 1
-fi
-
-echo "Writing git ls-files -mo to $TEMP_BUILD/changes"
-# Checkout files that we don't want removed from the host, like settings.php.
-# This function should be defined in the host include script.
-protectfiles;
-
-git ls-files -d --exclude-standard > $TEMP_BUILD/deletes
-echo "Adding file deletions to GIT"
-while read LINE
-  do
-    echo "Deleted: $LINE";
-    git rm "$LINE";
-done < $TEMP_BUILD/deletes
-
-git ls-files -mo --exclude-standard > $TEMP_BUILD/changes
-echo "Adding new and changed files to GIT"
-while read LINE
-  do
-    echo "Adding $LINE";
-    git add "$LINE";
-done < $TEMP_BUILD/changes
-git status
 echo "Committing changes"
 git commit --file=$TEMP_BUILD/commitmessage >> /dev/null
-git log --max-count=1
+
+# Amend the commit we just made so we can update the commit message in the context of the changes
+git commit -v --amend
+
 echo $'\n'
+
 if confirmpush; then
   git push
 else
