@@ -158,4 +158,11 @@ SETTINGS_SITE="$DESTINATION/profiles/$PROJECT/scripts/settings/site.settings.php
 cp $SETTINGS_SITE $DESTINATION/sites/default/site.settings.php
 echo "Copied site.settings.php into place."
 
+# uncomment RewriteBase in project's .htaccess file
+# necessary for Drupal sites running on a machine configured using ThinkShout standards
+# see https://github.com/thinkshout/ts_recipes/tree/master/brew-lamp-dev-envt
+# see https://github.com/thinkshout/ts_recipes/blob/master/environment_setup.sh
+cd $DESTINATION
+sed -i '' 's/# RewriteBase \/$/RewriteBase \//g' ./.htaccess
+
 echo "Build script complete."
