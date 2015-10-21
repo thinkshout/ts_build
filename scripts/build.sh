@@ -141,6 +141,9 @@ if [ $DBUSER  ] && [ $DBPASS ] && [ $DB ] ; then
     echo -n "Copying settings.php additions"
     chmod 664 $DESTINATION/sites/default/settings.php
     cat $SETTINGS >> $DESTINATION/sites/default/settings.php
+    # add $base_url to settings.php so drush uli opens site rather than printing
+    # to terminal
+    echo "\$base_url = http://$PROJECT.dev" >> $DESTINATION/sites/default/settings.php
     chmod 444 $DESTINATION/sites/default/settings.php
   fi
   set -e
