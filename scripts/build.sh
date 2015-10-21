@@ -135,6 +135,9 @@ if [ $DBUSER  ] && [ $DBPASS ] && [ $DB ] ; then
   # Copy settings_additions.php if found
   echo $SETTINGS
   if [ -f $SETTINGS ]; then
+    # ensure permissions on the sites/default directory allow writing
+    # installation process will leave sites/default with 555 permissions
+    chmod 755 $DESTINATION/sites/default
     echo -n "Copying settings.php additions"
     chmod 664 $DESTINATION/sites/default/settings.php
     cat $SETTINGS >> $DESTINATION/sites/default/settings.php
