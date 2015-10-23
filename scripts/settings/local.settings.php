@@ -11,7 +11,7 @@ if (!defined(PANTHEON_ENVIRONMENT)) {
     array (
       'default' =>
       array (
-        'database' => 'SITE',
+        'database' => 'PROJECT',
         'username' => 'root',
         'password' => 'root',
         'host' => 'localhost',
@@ -43,4 +43,14 @@ if (!defined(PANTHEON_ENVIRONMENT)) {
   // Set domain for stage_file_proxy module.
   $conf['stage_file_proxy_origin'] = 'https://www.SITEDOMAIN.org';
 
+  // Add $base_url so drush uli opens site rather than printing to terminal.
+  // If the page being requested is HTTPS or the environment specifies HTTPS.
+  if ((isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) == 'on') || (isset($_SERVER['TSDEV_SSL']) && $_SERVER['TSDEV_SSL'])) {
+    // Using HTTPS.
+    $base_url = "https://PROJECT.dev";
+  }
+  else {
+    // Using HTTP.
+    $base_url = "http://PROJECT.dev";
+  }
 }
