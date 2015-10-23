@@ -4,7 +4,7 @@
  *
  * Update SITE to database name and DISTRO to the distro directory name.
  */
-if (!defined(PANTHEON_ENVIRONMENT)) {
+if (!defined('PANTHEON_ENVIRONMENT')) {
 
   $databases = array (
     'default' =>
