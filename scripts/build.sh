@@ -39,13 +39,13 @@ realpath () {
 
   PHYS_DIR=`pwd -P`
   RESULT=$PHYS_DIR/$TARGET_FILE
-  echo $RESULT
+  printf $RESULT
 }
 
 usage() {
-  echo "Usage: build.sh [-y] <DESTINATION_PATH> <DB_USER> <DB_PASS> <DB_NAME>" >&2
-  echo "Use -y to skip deletion confirmation" >&2
-  echo "Install profile will only be run if db credentials are provided" >&2
+  printf "Usage: build.sh [-y] <DESTINATION_PATH> <DB_USER> <DB_PASS> <DB_NAME>" >&2
+  printf "Use -y to skip deletion confirmation" >&2
+  printf "Install profile will only be run if db credentials are provided" >&2
   exit 1
 }
 
@@ -65,7 +65,7 @@ while getopts ":y" opt; do
       ASK=false
       ;;
     \?)
-      echo "Invalid option: -$OPTARG" >&2
+      printf "Invalid option: -$OPTARG" >&2
       usage
       ;;
   esac
@@ -76,7 +76,7 @@ if [ "x$DESTINATION" == "x" ]; then
 fi
 
 if [ ! -f drupal-org.make ]; then
-  echo "[error] Run this script from the distribution base path."
+  printf "[error] Run this script from the distribution base path."
   exit 1
 fi
 
@@ -94,27 +94,27 @@ esac
 rmdir $TEMP_BUILD
 
 if [ -d $DESTINATION ]; then
-  echo "Removing existing destination: $DESTINATION"
+  printf "Removing existing destination: $DESTINATION\n"
   if $ASK; then
     confirm && chmod -R 777 $DESTINATION && rm -rf $DESTINATION
     if [ -d $DESTINATION ]; then
-      echo "Aborted."
+      printf "Aborted.\n"
       exit 1
     fi
   else
     chmod -R 777 $DESTINATION && rm -rf $DESTINATION
   fi
-  echo "Existing directories removed."
+  printf "Existing directories removed.\n"
 fi
 
 # Build the profile.
-echo "Building the profile..."
+printf "Building the profile...\n"
 drush make --no-core --contrib-destination --no-gitinfofile drupal-org.make tmp
 
 # Build the distribution and copy the profile in place.
-echo "Building the distribution..."
+printf "Building the distribution...\n"
 drush make --no-gitinfofile drupal-org-core.make $TEMP_BUILD
-echo -n "Moving to destination... "
+printf "Moving to destination...\n"
 cp -r tmp $TEMP_BUILD/profiles/$PROJECT
 rm -rf tmp
 cp -r . $TEMP_BUILD/profiles/$PROJECT
@@ -130,26 +130,26 @@ if [ $DBUSER  ] && [ $DBPASS ] && [ $DB ] ; then
   # bash to continue even if error.
   set +e
   cd $DESTINATION
-  echo "Running install profile"
+  printf "Running install profile...\n"
   drush si $PROJECT --site-name="$SITENAME" --db-url=mysql://$DBUSER:$DBPASS@localhost/$DB -y
   # Copy settings_additions.php if found
-  echo $SETTINGS
+  printf "$SETTINGS\n"
   if [ -f $SETTINGS ]; then
     # ensure permissions on the sites/default directory allow writing
     # installation process will leave sites/default with 555 permissions
     chmod 755 $DESTINATION/sites/default
-    echo -n "Copying settings.php additions"
+    printf "Copying settings.php additions.\n"
     chmod 664 $DESTINATION/sites/default/settings.php
     cat $SETTINGS >> $DESTINATION/sites/default/settings.php
     chmod 444 $DESTINATION/sites/default/settings.php
   fi
   set -e
 else
-  echo "Skipping install profile"
+  printf "Skipping install profile\n"
   # Copy settings_additions.php if found
-  echo $SETTINGS
+  printf "$SETTINGS\n"
   if [ -f $SETTINGS ]; then
-    echo -n "Copying settings.php additions to default.settings.php "
+    printf "Copying settings.php additions to default.settings.php\n"
     cat $SETTINGS >> $DESTINATION/sites/default/default.settings.php
   fi
 fi
@@ -175,4 +175,4 @@ fi
 cd $DESTINATION
 sed -i '' 's/# RewriteBase \/$/RewriteBase \//g' ./.htaccess
 
-echo "Build script complete."
+printf "\nBuild script complete.\n"
