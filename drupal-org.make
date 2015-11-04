@@ -54,10 +54,6 @@ projects[pathauto][subdir] = "contrib"
 ;projects[token][version] = "1.5"
 projects[token][subdir] = "contrib"
 
-; views
-;projects[views][version] = "3.7"
-projects[views][subdir] = "contrib"
-
 ;-----------------------------------------
 ; Patched Contrib Modules
 ;-----------------------------------------
@@ -104,6 +100,6 @@ libraries[chosen][type] = "library"
 ;-----------------------------------------
 ; Themes
 ;-----------------------------------------
-projects[basic][version] = ""
-projects[basic][type] = theme
-projects[basic][subdir] = contrib
+projects[zen][version] = ""
+projects[zen][type] = theme
+projects[zen][subdir] = contrib

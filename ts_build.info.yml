@@ -4,19 +4,23 @@ description: Description of ThinkShout Project
 core: 8.x
 distribution_name: ThinkShout Project
 
+# Mark this as an 'exclusive' profile, so if it's the only one, it gets auto-
+# selected by default.
+exclusive: 1
+
 dependencies:
   - block
   - contact
   - dblog
   - field_ui
   - file
-# - menu
-# - number
   - options
   - path
   - rdf
   - taxonomy
   - admin_menu
+  - views
+  - views_ui
 # - bean
 # - context
 # - context_ui
@@ -25,10 +29,7 @@ dependencies:
 # - diff
 # - entity
 # - entityreference
-  - features
 # - field_collection
-  - pathauto
+# - menu
+# - number
 # - strongarm
-  - token
-  - views
-  - views_ui

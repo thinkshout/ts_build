@@ -4,7 +4,7 @@
  * Implements hook_install().
  */
 function ts_build_install() {
-  include_once DRUPAL_ROOT . '/core/profiles/minimal/minimal.install';
+  include_once DRUPAL_ROOT . '/core/profiles/ts_build/ts_build.install';
   // Turn off Adv Help warning for Views.
   // variable_set('views_ui_show_advanced_help_warning', '0');
 
@@ -22,6 +22,4 @@ function ts_build_install() {
   // variable_set('date_format_long', 'l, F j, Y - g:ia');
   // variable_set('date_format_medium', 'D, m/d/Y - g:ia');
   // variable_set('date_format_short', 'D n/j g:i a');
-
-  minimal_install();
 }
