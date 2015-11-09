@@ -11,6 +11,7 @@ exclusive: 1
 dependencies:
   - block
   - contact
+  - composer_manager
   - dblog
   - field_ui
   - file
@@ -18,7 +19,6 @@ dependencies:
   - path
   - rdf
   - taxonomy
-  - admin_menu
   - views
   - views_ui
 # - bean

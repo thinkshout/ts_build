@@ -10,13 +10,13 @@ core = 8.x
 ;-----------------------------------------
 
 
-; admin_menu
-;projects[admin_menu][version] = "3.0-rc4"
-projects[admin_menu][subdir] = "contrib"
-
 ; bean requires ctools, entity
 ;projects[bean][version] = "1.7"
 ;projects[bean][subdir] = "contrib"
+
+; composer_manager
+;projects[composer_manager][version] = ""
+;projects[composer_manager][subdir] = "contrib"
 
 ; context requires ctools 1.7+ (jquery_ui & admin recommended)
 ;projects[context][version] = "3.2"
