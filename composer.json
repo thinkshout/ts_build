@@ -1,0 +1,14 @@
+{
+  "repositories": [{
+    "type": "vcs",
+    "url": "https://github.com/thinkshout/ts_build_scripts.git"
+  }],
+  "require": {
+    "thinkshout/ts_build_scripts": "dev-master"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "ln -s vendor/thinkshout/ts_build_scripts scripts"
+    ]
+  }
+}
