@@ -152,8 +152,8 @@ rm -rf $TEMP_BUILD/drupal/profiles/$PROJECT/scripts
 echo "rm -rf $TEMP_BUILD/drupal/profiles/$PROJECT/scripts"
 
 # Remove .git and .gitignore files
-find $TEMP_BUILD/drupal | grep \.git | xargs rm -rf
-echo "find $TEMP_BUILD/drupal | grep \.git | xargs rm -rf"
+find $TEMP_BUILD/drupal | grep '\.git' | xargs rm -rf
+echo "find $TEMP_BUILD/drupal | grep '\.git' | xargs rm -rf"
 
 # Move the remote .git into the drupal root
 mv $TEMP_BUILD/$HOSTTYPE/.git $TEMP_BUILD/drupal/.git
