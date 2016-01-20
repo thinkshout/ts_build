@@ -6,9 +6,12 @@
   "require": {
     "thinkshout/ts_build_scripts": "dev-master"
   },
-  "scripts": {
-    "post-install-cmd": [
-      "ln -s vendor/thinkshout/ts_build_scripts scripts"
-    ]
-  }
+  "config": {
+    "bin-dir": "scripts"
+  },
+  "bin": [
+      "bootstrap.sh",
+      "build.sh",
+      "deploy.sh",
+  ]
 }
