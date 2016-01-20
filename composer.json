@@ -12,6 +12,6 @@
   "bin": [
       "bootstrap.sh",
       "build.sh",
-      "deploy.sh",
+      "deploy.sh"
   ]
 }
