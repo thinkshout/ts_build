@@ -9,9 +9,4 @@
   "config": {
     "bin-dir": "scripts"
   },
-  "bin": [
-      "bootstrap.sh",
-      "build.sh",
-      "deploy.sh"
-  ]
 }
