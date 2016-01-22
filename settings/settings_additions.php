@@ -1,4 +1,3 @@
-
 // Site configuration settings.
 if (file_exists(DRUPAL_ROOT . '/' . conf_path() . '/site.settings.php')) {
   include_once DRUPAL_ROOT . '/' . conf_path() . '/site.settings.php';

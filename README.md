@@ -10,7 +10,13 @@ make use of TS Build:
 * drush 3.1 - http://drupal.org/project/drush
 * drush make 2.0 beta 9 - http://drupal.org/project/drush_make
 * git - http://git-scm.com
+* composer - https://getcomposer.org
 
 # Getting started
+The build scripts are now included with composer. To install the scripts `composer install`. To update, `composer update`.
 
+# Update an existing project to use ts_build_script
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/thinkshout/ts_build/composer/update.sh)"
+
+# Install directions
 See https://github.com/thinkshout/ts_build/wiki/Standard-Build for the current instructions.
