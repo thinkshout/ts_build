@@ -15,7 +15,7 @@ make use of TS Build:
 # Getting started
 The build scripts are now included with composer. To install the scripts `composer install`. To update, `composer update`.
 
-# Update an existing project to use ts_build_script
+# Update an existing project to use ts_build_script run this command from the root of project folder.
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/thinkshout/ts_build/master/update.sh)"
 
 # Install directions
