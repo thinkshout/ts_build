@@ -7,6 +7,8 @@ echo saving your current configuration
 mv scripts/config.sh settings/config.sh
 echo "Append protectfiles from hosttypes/pantheon.sh to settings/config.sh"
 cat scripts/hosttypes/pantheon.sh >> settings/config.sh
+echo "Getting new settings_additions.php"
+[ ! -f "settings/settings_additions.php" ] && curl -fsSL https://raw.githubusercontent.com/thinkshout/ts_build/master/settings/settings_additions.php > settings/settings_additions.php
 echo "Getting new .gitignore"
 curl -fsSL https://raw.githubusercontent.com/thinkshout/ts_build/master/.gitignore > .gitignore
 echo "Getting new composer file"
