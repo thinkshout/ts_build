@@ -20,6 +20,6 @@ curl -fsSL https://raw.githubusercontent.com/thinkshout/ts_build/master/.gitigno
 echo "Getting new composer file"
 curl -fsSL https://raw.githubusercontent.com/thinkshout/ts_build/master/composer.json > composer.json
 echo "Removing old scripts"
-rm -rf scripts
+git rm -r scripts
 echo "Installing new scripts"
 composer install
