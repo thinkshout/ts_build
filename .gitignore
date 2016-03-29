@@ -1,6 +1,8 @@
 .idea
 scripts
 vendor
-modules/libraries
-modules/themes
+libraries
+modules/contrib
+modules/developer
+themes/contrib
 settings/local.settings.php
