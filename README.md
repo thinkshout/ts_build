@@ -3,7 +3,7 @@
 
 ThinkShout's make file and starter profile for building Drupal 7.x sites.
 
-# Requirements 
+# Requirements
 In addition to the standard Drupal requirements you will need the following to
 make use of TS Build:
 
@@ -15,8 +15,16 @@ make use of TS Build:
 # Getting started
 The build scripts are now included with composer. To install the scripts `composer install`. To update, `composer update`.
 
-# Update an existing project to use ts_build_script run this command from the root of project folder.
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/thinkshout/ts_build/master/update.sh)"
+# Update an existing project to use ts_build_script
+
+* Run this command from the root of project folder:
+`bash -c "$(curl -fsSL https://raw.githubusercontent.com/thinkshout/ts_build/master/update.sh)"`
+
+* Either do a dry run of the deploy script (don't commit it!) or run the build script to check to see what's changed.
+
+* Provided all the changes make sense, check these changes into the Github repo.
+
+* Again, provided the changes make sense, you can deploy the latest build scripts to Pantheon. This will help to eliminate any possible confusion for the dev pushing the next deployment.
 
 # Install directions
 See https://github.com/thinkshout/ts_build/wiki/Standard-Build for the current instructions.
