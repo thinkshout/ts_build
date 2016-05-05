@@ -26,5 +26,14 @@ The build scripts are now included with composer. To install the scripts `compos
 
 * Again, provided the changes make sense, you can deploy the latest build scripts to Pantheon. This will help to eliminate any possible confusion for the dev pushing the next deployment.
 
+# What to do if the deployment looks off
+
+* Check out the commit before updating the scripts.
+
+* Do a dry run of the deploy script to see if the changes are the same between the previous scripts and the new one.
+
+* Revert back to the old script, if necessary, and create a Github issue explaining
+the problem when attempting to switch.
+
 # Install directions
 See https://github.com/thinkshout/ts_build/wiki/Standard-Build for the current instructions.
