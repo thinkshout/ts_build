@@ -5,6 +5,9 @@
 api = 2
 core = 7.x
 
+; Uncomment to use translation.
+;includes[i18n] = "i18n.make"
+
 
 ;-----------------------------------------
 ; Contrib Modules
